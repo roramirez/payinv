@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from sales.models import Sale
-from sales.forms import SaleForm
+from sales.forms import SaleForm, SaleFilter
 from sales import tables, filters
 from utilities.views import ObjectEditView, ObjectListView
 from django.core.urlresolvers import reverse_lazy
@@ -23,6 +23,7 @@ class SaleListView(ObjectListView):
     table = tables.SaleTable
     template_name = 'sales/list.html'
     filter = filters.SaleFilter
+    filter_form = SaleFilter
 
     # Hook filter by request
     def alter_queryset(self, request):
