@@ -1,0 +1,216 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the payinv package.
+# Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>, 2019.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-17 14:11-0400\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: core/utils.py:5
+msgid "Yes"
+msgstr "Si"
+
+#: core/utils.py:5
+msgid "No"
+msgstr ""
+
+#: customers/tables.py:12 templates/customers/show.html:19
+#: templates/customers/show.html:44 templates/invoices/show.html:19
+#: templates/payments/show.html:19 templates/sales/show.html:19
+msgid "Name"
+msgstr "Nombre"
+
+#: customers/tables.py:13 templates/customers/show.html:52
+msgid "Address"
+msgstr "Direccion"
+
+#: customers/tables.py:14 templates/customers/show.html:56
+msgid "Active"
+msgstr "Activo"
+
+#: customers/tables.py:15
+msgid "Created At"
+msgstr "Creado"
+
+#: invoices/tables.py:10 sales/tables.py:10 templates/invoices/show.html:44
+#: templates/sales/show.html:44
+msgid "Internal Id"
+msgstr "Numero Interno"
+
+#: invoices/tables.py:13 payments/tables.py:11 templates/invoices/show.html:48
+#: templates/payments/show.html:44 templates/sales/show.html:12
+msgid "Sale"
+msgstr "Venta"
+
+#: invoices/tables.py:15 payments/tables.py:13 sales/tables.py:15
+#: templates/invoices/show.html:52 templates/payments/show.html:49
+#: templates/sales/show.html:52
+msgid "Total Value"
+msgstr "Valor total"
+
+#: invoices/tables.py:16
+msgid "Date to Pay"
+msgstr "Fecha a pagar"
+
+#: payments/tables.py:14
+msgid "Pay date"
+msgstr "Fecha de pago"
+
+#: sales/tables.py:13 templates/customers/show.html:12
+#: templates/sales/show.html:48
+msgid "Customer"
+msgstr "Cliente"
+
+#: sales/tables.py:16
+msgid "Concept"
+msgstr "Concept"
+
+#: sales/tables.py:17
+msgid "Date"
+msgstr "Fecha"
+
+#: templates/_base.html:10
+msgid "description meta"
+msgstr ""
+
+#: templates/create.html:28
+msgid "Copy"
+msgstr "Copiar"
+
+#: templates/customers/list.html:5
+msgid "Customers"
+msgstr "Clientes"
+
+#: templates/customers/list.html:12
+msgid "Add a customer"
+msgstr "Agregar un nuevo cliente"
+
+#: templates/customers/show.html:32
+msgid "Edit this customer"
+msgstr "Editar este cliente"
+
+#: templates/customers/show.html:48
+msgid "CID"
+msgstr "ID de empresa"
+
+#: templates/home.html:20
+msgid "Browse"
+msgstr ""
+
+#: templates/inc/created_updated.html:3
+msgid "Created"
+msgstr "Creado"
+
+#: templates/inc/created_updated.html:3
+msgid "Updated"
+msgstr "Actualizado"
+
+#: templates/inc/created_updated.html:3
+msgid "ago"
+msgstr "atras"
+
+#: templates/inc/export_button.html:6 templates/inc/export_button.html:19
+msgid "Export"
+msgstr "Exportar"
+
+#: templates/inc/search_panel.html:5 templates/inc/search_panel.html:10
+msgid "Search"
+msgstr "Buscar"
+
+#: templates/invoices/list.html:5
+msgid "Invoices"
+msgstr "Facturas"
+
+#: templates/invoices/list.html:12
+msgid "Add a invoice"
+msgstr "Agregar una nueva factura"
+
+#: templates/invoices/show.html:12
+msgid "Invoice"
+msgstr "Factura"
+
+#: templates/invoices/show.html:32
+msgid "Edit this invoice"
+msgstr "Editar esta factura"
+
+#: templates/paginator.html:29
+msgid "Showing"
+msgstr "Mostrando"
+
+#: templates/paginator.html:29
+msgid "of"
+msgstr "de"
+
+#: templates/payments/list.html:5
+msgid "Payments"
+msgstr "Pagos"
+
+#: templates/payments/list.html:12
+msgid "Add a payment"
+msgstr "Agregar un nuevo pago"
+
+#: templates/payments/show.html:12
+msgid "Payment"
+msgstr "Pago"
+
+#: templates/payments/show.html:32
+msgid "Edit this payment"
+msgstr "Editar este pago"
+
+#: templates/payments/show.html:53
+msgid "Pay at"
+msgstr "Pagado el"
+
+#: templates/payments/show.html:57
+msgid "Notes"
+msgstr "Observaciones"
+
+#: templates/sales/list.html:5
+msgid "Sales"
+msgstr "Ventas"
+
+#: templates/sales/list.html:12
+msgid "Add a sale"
+msgstr "Agregar nueva venta"
+
+#: templates/sales/show.html:32
+msgid "Edit this sale"
+msgstr "Editar esta venta"
+
+#: templates/utilities/obj_edit.html:7
+msgid "Editing"
+msgstr "Editando"
+
+#: templates/utilities/obj_edit.html:7
+msgid "Add a new"
+msgstr "Agregar nuevo"
+
+#: templates/utilities/obj_edit.html:18
+msgid "Errors"
+msgstr "Errores"
+
+#: templates/utilities/obj_edit.html:37
+msgid "Update"
+msgstr "Actualizar"
+
+#: templates/utilities/obj_edit.html:39
+msgid "Create"
+msgstr "Crear"
+
+#: templates/utilities/obj_edit.html:40
+msgid "Create and Add Another"
+msgstr "Crear y guardar otro"
+
+#: templates/utilities/obj_edit.html:42
+msgid "Cancel"
+msgstr "Cancelar"

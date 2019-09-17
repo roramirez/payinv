@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^customers/', include('customers.urls')),
     url(r'^sales/', include('sales.urls')),
     url(r'^invoices/', include('invoices.urls')),
+    url(r'^payments/', include('payments.urls')),
 ]

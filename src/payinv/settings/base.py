@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'customers',
     'sales',
     'invoices',
+    'payments',
     'core',
     'utilities',
     'registration',
