@@ -10,3 +10,9 @@ class PaymentForm(ModelForm, BootstrapMixin):
     class Meta:
         model = Payment
         fields = ['sale', 'total_value', 'pay_at', 'notes']
+
+
+class PaymentFilterForm(ModelForm, BootstrapMixin):
+    class Meta:
+        model = Payment
+        fields = ['sale']

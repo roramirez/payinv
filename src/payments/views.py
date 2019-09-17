@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from payments.models import Payment
-from payments.forms import PaymentForm
+from payments.forms import PaymentForm, PaymentFilterForm
 from payments import tables, filters
 from utilities.views import ObjectEditView, ObjectListView
 from django.core.urlresolvers import reverse_lazy
@@ -22,6 +22,7 @@ class PaymentListView(ObjectListView):
     table = tables.PaymentTable
     template_name = 'payments/list.html'
     filter = filters.PaymentFilter
+    filter_form = PaymentFilterForm
 
     # Hook filter by request
     def alter_queryset(self, request):

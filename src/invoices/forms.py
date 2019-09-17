@@ -11,3 +11,9 @@ class InvoiceForm(ModelForm, BootstrapMixin):
         model = Invoice
         fields = ['internal_id', 'sale', 'total_value', 'date_to_pay',
                   'notes']
+
+
+class InvoiceFilterForm(ModelForm, BootstrapMixin):
+    class Meta:
+        model = Invoice
+        fields = ['sale']

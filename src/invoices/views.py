@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from invoices.models import Invoice
-from invoices.forms import InvoiceForm
+from invoices.forms import InvoiceForm, InvoiceFilterForm
 from invoices import tables, filters
 from utilities.views import ObjectEditView, ObjectListView
 from django.core.urlresolvers import reverse_lazy
@@ -23,6 +23,7 @@ class InvoiceListView(ObjectListView):
     table = tables.InvoiceTable
     template_name = 'invoices/list.html'
     filter = filters.InvoiceFilter
+    filter_form = InvoiceFilterForm
 
     # Hook filter by request
     def alter_queryset(self, request):
