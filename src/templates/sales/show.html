@@ -1,0 +1,63 @@
+{% extends '_base.html' %}
+{% load helpers %}
+{% load i18n %}
+{% load utils_payinv %}
+
+{% block title %}{{ sale }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-9">
+        <ol class="breadcrumb">
+            <li><a href="{% url 'sale_list' %}">{% trans 'Sale' %}</a></li>
+            <li>{{ sale }}</li>
+        </ol>
+    </div>
+    <div class="col-md-3">
+        <form action="{% url 'sale_list' %}" method="get">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="{% trans 'Name' %}" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="fa fa-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="pull-right">
+        <a href="{% url 'sale_edit' pk=sale.pk %}" class="btn btn-warning">
+            <span class="fa fa-pencil" aria-hidden="true"></span>
+            {% trans 'Edit this sale' %}
+        </a>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ sale }}
+            </div>
+            <table class="table table-hover panel-body">
+                <tr>
+                    <td>{% trans 'Internal Id' %}</td>
+                    <td>{{ sale.internal_id }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Customer' %}</td>
+                    <td>{{ sale.customer }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Total Value' %}</td>
+                    <td>{{ sale.total_value }}</td>
+                </tr>
+            </table>
+        </div>
+        {% with sale.custom_fields as custom_fields %}
+            {% include 'inc/custom_fields_panel.html' %}
+        {% endwith %}
+        {% include 'inc/created_updated.html' with obj=sale %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'utilities/obj_edit.html' %}
+
+{% load form_helpers %}
+
+
+{% block form %}
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>Sale</strong></div>
+        <div class="panel-body">
+            {% render_field form.internal_id %}
+            {% render_field form.customer %}
+            {% render_field form.total_value %}
+            {% render_field form.done_at %}
+            {% render_field form.concept %}
+            {% render_field form.notes %}
+        </div>
+    </div>
+{% endblock %}
