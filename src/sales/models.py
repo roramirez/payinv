@@ -15,8 +15,8 @@ class Sale(DateTimedModel):
     notes = models.TextField(blank=True, null=True)
 
     def __unicode__(self):
-        return "{}".format(self.internal_id)
+        return "{} / {} ".format(self.internal_id, self.customer)
 
     def __str__(self):
-        return "{}".format(self.internal_id)
+        return "{} / {} ".format(self.internal_id, self.customer)
 
