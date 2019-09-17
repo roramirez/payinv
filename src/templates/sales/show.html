@@ -52,6 +52,16 @@
                     <td>{% trans 'Total Value' %}</td>
                     <td>{{ sale.total_value }}</td>
                 </tr>
+                <tr>
+                    <td>{% trans 'Total Invoices' %}</td>
+                    <td>{{ sale.total_invoices }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Total Payments' %}</td>
+                    <td>{{ sale.total_payments }}</td>
+                </tr>
+
+
             </table>
         </div>
         {% with sale.custom_fields as custom_fields %}
