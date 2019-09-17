@@ -15,6 +15,8 @@ class SaleTable(BaseTable):
     total_value = tables.Column(verbose_name=_('Total Value'))
     concept = tables.Column(verbose_name=_('Concept'))
     done_at = tables.Column(verbose_name=_('Date'))
+    total_payments = tables.Column(verbose_name=_('Total Payments'))
+    total_invoices = tables.Column(verbose_name=_('Total Invoices'))
 
     class Meta(BaseTable.Meta):
         model = Sale
