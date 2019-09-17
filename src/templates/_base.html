@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load i18n %}
+{% load static %}
+<head>
+    <link rel="stylesheet" href="{% static "css/theme.css" %}">
+    <link rel="stylesheet" href="{% static "font-awesome/css/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/style.css" %}">
+    <title>{% block title %}SpeechText{% endblock %}</title>
+    <meta name="description" content="{% trans 'description meta' %}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="navbar navbar-static-top navbar-inverse" role="navigation" aria-label="navbar">
+            <div class="container">
+                <span>
+                    <a class="navbar-brand" href="{% url 'index' %}">
+                    </a>
+                </span>
+
+                 <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customers <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{% url 'customer_add' %}"><i class="fa fa-search" aria-hidden="true"></i> New</a></li>
+                            <li><a href="{% url 'customer_list' %}"><i class="fa fa-search" aria-hidden="true"></i> List</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container wrapper">
+        {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                {{ message|safe }}
+            </div>
+        {% endfor %}
+
+        <div id="content">
+        {% block content %}{% endblock %}
+        </div>
+
+        <div class="push"></div>
+    </div>
+    <!--
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-4">
+                    <p class="text-muted">
+                        {{ settings.HOSTNAME }} ({{ settings.VERSION }})
+                    </p>
+                </div>
+                <div class="col-xs-4 text-center">
+                    <p class="text-muted">{% now 'Y-m-d H:i:s T' %}</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    -->
+    <script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+    <script src="{% static "bootstrap/dist/js/bootstrap.min.js" %}"></script>
+    <script src="{% static "js/payinv.js" %}"></script>
+</body>
+
+</html>

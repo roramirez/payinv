@@ -1,0 +1,4 @@
+{% load i18n %}
+<p>
+    <small class="text-muted">{% trans 'Created' %} {{ obj.created_at }} &middot; {% trans 'Updated' %} <span title="{{ obj.modified_at }}">{{ obj.modified_at|timesince }}</span> {% trans 'ago' %}</small>
+</p>

@@ -1,0 +1,12 @@
+{
+  "name": "payinv",
+  "version": "0.0.1",
+  "description": "Not jet",
+  "devDependencies": {
+    "bower": "^1.7.7"
+  },
+  "scripts": {
+    "postinstall": "bower install"
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "name": "payinv",
+  "description": "PayInv",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "3.3.x",
+    "font-awesome": "4.4.x",
+    "clipboard": "v2.0.x"
+  },
+  "authors": [
+    "Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>"
+  ],
+  "directory": "src/static-project",
+  "keywords": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
+
+

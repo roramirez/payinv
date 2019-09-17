@@ -1,0 +1,61 @@
+{% extends '_base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block content %}
+
+<div class="text-center">
+    <div class="page-header">
+      <h1 class="logo">SpeechText <small>Bienvenido, sube un archivo</small></h1>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-offset-3  col-md-6">
+            <form action="{% url 'create' %}" id="audio_form" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label class="input-group-btn">
+                        <span class="btn btn-primary">
+                            {% trans 'Browse' %}  <input type="file" id="audio_file" name="audio_file" style="display: none;">
+                        </span>
+                    </label>
+                    <input type="text" class="form-control" readonly>
+                    <label class="input-group-btn">
+                        <button class="btn btn-default" id="toUpload" type="button">Subir</button>
+                    </label>
+                </div>
+                <span class="help-block">
+                    <hr>
+                    <div class="text-right">
+                    <p>
+                        Con <strong>SpeechText</strong> puedes traducir tu archivo de audio a texto solo subiendo tu archivo.
+                        <small>
+                            (Hasta el momento puedes usar archivos WAV, MP3, MP4 y AMR)
+                        </small>
+                    </p>
+                    <p>
+                        También puedes integrar tu sistema usando nuestra API. <a href="{% url 'api-docs:docs-index' %}">Puedes usar y consultar nuestra documentación</a>
+                    </p>
+
+                    {% if not request.user.is_authenticated %}
+                        <p> Si no tienes una cuenta, puedes <a href="{% url 'registration_register' %}">crear una gratis aquí</a></p>
+                    {% endif %}
+
+                    <div class="footer">
+                        <ul class="info">
+                            <li><a href="https://about.speechtext.cl/">Acerca de</a></li>
+                            <li><a href="https://about.speechtext.cl/#contact">Contacto</a></li>
+                            <li><a href="https://about.speechtext.cl/politicas-privacidad">Politicas de Privacidad</a></li>
+                        </ul>
+                    </div>
+
+                    </div>
+                </span>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="{% static "jquery/dist/jquery.min.js" %}"></script>
+<script src="{% static "js/custom.js" %}"></script>
+{% endblock %}

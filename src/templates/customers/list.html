@@ -1,0 +1,27 @@
+{% extends '_base.html' %}
+{% load helpers %}
+{% load i18n %}
+
+{% block title %}{% trans 'Customers' %}{% endblock %}
+
+{% block content %}
+<div class="pull-right">
+    {% if perms.tenancy.add_customer %}
+        <a href="{% url 'customer_add' %}" class="btn btn-primary">
+            <span class="fa fa-plus" aria-hidden="true"></span>
+            {% trans 'Add a customer' %}
+        </a>
+    {% endif %}
+    {% include 'inc/export_button.html' with obj_type='customers' %}
+</div>
+<h1>Customer</h1>
+<div class="row">
+    <div class="col-md-9">
+        {% include 'utilities/obj_table.html' %}
+    </div>
+    <div class="col-md-3">
+        {% include 'inc/search_panel.html' %}
+        {% include 'inc/filter_panel.html' %}
+    </div>
+</div>
+{% endblock %}

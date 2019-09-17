@@ -1,0 +1,19 @@
+# Django and other stuff
+Django==1.11.24
+django_registration==2.1.2
+Markdown==2.6.6
+django-tables2==1.2.1
+django-filter==1.1
+djangorestframework==3.8.2
+django-extensions==2.1.2
+django-cors-headers==2.4.0
+django-tables2==1.2.1
+django-widget-tweaks==1.4.1
+
+# doc
+coreapi==2.3.3
+Pygments==2.2.0
+
+
+psycopg2==2.7.6
+click==6.7

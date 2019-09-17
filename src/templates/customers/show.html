@@ -1,0 +1,67 @@
+{% extends '_base.html' %}
+{% load helpers %}
+{% load i18n %}
+{% load utils_payinv %}
+
+{% block title %}{{ customer }}{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-9">
+        <ol class="breadcrumb">
+            <li><a href="{% url 'customer_list' %}">{% trans 'Customer' %}</a></li>
+            <li>{{ customer }}</li>
+        </ol>
+    </div>
+    <div class="col-md-3">
+        <form action="{% url 'customer_list' %}" method="get">
+            <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="{% trans 'Name' %}" />
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">
+                        <span class="fa fa-search" aria-hidden="true"></span>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="pull-right">
+        <a href="{% url 'customer_edit' pk=customer.pk %}" class="btn btn-warning">
+            <span class="fa fa-pencil" aria-hidden="true"></span>
+            {% trans 'Edit this customer' %}
+        </a>
+</div>
+
+<div class="row">
+    <div class="col-md-7">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{ customer }}
+            </div>
+            <table class="table table-hover panel-body">
+                <tr>
+                    <td>{% trans 'Name' %}</td>
+                    <td>{{ customer.name }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'CID' %}</td>
+                    <td>{{ customer.cid }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Address' %}</td>
+                    <td>{{ customer.address }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Active' %}</td>
+                    <td>{{ customer.active|yes_or_no }}</td>
+                </tr>
+            </table>
+        </div>
+        {% with customer.custom_fields as custom_fields %}
+            {% include 'inc/custom_fields_panel.html' %}
+        {% endwith %}
+        {% include 'inc/created_updated.html' with obj=customer %}
+    </div>
+</div>
+{% endblock %}

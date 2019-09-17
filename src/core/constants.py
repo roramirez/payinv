@@ -1,0 +1,1 @@
+# Here constants for project

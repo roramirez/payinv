@@ -1,0 +1,5 @@
+-r base.txt
+flake8
+django-debug-toolbar==1.4
+ipython==5.8.0
+autopep8

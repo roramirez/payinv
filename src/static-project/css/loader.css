@@ -1,0 +1,91 @@
+/*
+ * CSS loader process
+ *
+ * */
+.loader{
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+
+#loader{
+  top: 40px;
+  left: -2.5px;
+}
+
+#loader span{
+  display: inline-block;
+  width: 5px;
+  height: 20px;
+  background-color: #3498db;
+}
+
+#loader span:nth-child(1){
+  animation: grow 1s ease-in-out infinite;
+}
+
+#loader span:nth-child(2){
+  animation: grow 1s ease-in-out 0.10s infinite;
+}
+
+#loader span:nth-child(3){
+  animation: grow 1s ease-in-out 0.20s infinite;
+}
+
+#loader span:nth-child(4){
+  animation: grow 1s ease-in-out 0.30s infinite;
+}
+
+#loader span:nth-child(5){
+  animation: grow 1s ease-in-out 0.40s infinite;
+}
+
+#loader span:nth-child(6){
+  animation: grow 1s ease-in-out 0.50s infinite;
+}
+
+#loader span:nth-child(6){
+  animation: grow 1s ease-in-out 0.45s infinite;
+}
+
+#loader span:nth-child(7){
+  animation: grow 1s ease-in-out 0.50s infinite;
+}
+
+#loader span:nth-child(8){
+  animation: grow 1s ease-in-out 0.40s infinite;
+}
+
+#loader span:nth-child(9){
+  animation: grow 1s ease-in-out 0.30s infinite;
+}
+
+#loader span:nth-child(10){
+  animation: grow 1s ease-in-out 0.20s infinite;
+}
+
+#loader span:nth-child(11){
+  animation: grow 1s ease-in-out 0.10s infinite;
+}
+
+@keyframes grow{
+  0%, 100%{
+    -webkit-transform: scaleY(0.8);
+    -ms-transform: scaleY(0.8);
+    -o-transform: scaleY(0.8);
+    transform: scaleY(0.8);
+  }
+
+  50%{
+    -webkit-transform: scaleY(2.5);
+    -ms-transform: scaleY(2.5);
+    -o-transform: scaleY(2.5);
+    transform: scaleY(2.5);
+  }
+}
+
+.speechtext, .alert-error {
+    display: none;
+}
