@@ -1,0 +1,78 @@
+# Python CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-python/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      # specify the version you desire here
+      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
+      - image: circleci/python:3.6.1
+
+      # Specify service dependencies here if necessary
+      # CircleCI maintains a library of pre-built images
+      # documented at https://circleci.com/docs/2.0/circleci-images/
+      - image: circleci/postgres:9.4
+        environment: # environment variables for database
+          POSTGRES_USER: payinv
+          POSTGRES_DB: payinv_test
+          POSTGRES_PASSWORD: "test_password"
+
+    working_directory: ~/repo
+
+    # Enviroment Variables
+    environment:
+      PAYINV_DATABASE_USER: payinv
+      PAYINV_DATABASE_PASSWORD: test_password
+      PAYINV_SECRET_KEY: secret_tests
+      PAYINV_DATABASE_HOST: localhost
+      PAYINV_ENVIRONMENT: test
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "requirements.txt" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements/test.txt
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ checksum "requirements/test.txt" }}
+
+      - run:
+          name: run lint
+          command: |
+            . venv/bin/activate
+            cd src
+            flake8
+
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            cd src
+            python manage.py test --noinput
+
+      - run:
+          name: run coverage
+          command: |
+            . venv/bin/activate
+            cd src
+            coverage run --source='.' manage.py test --noinput
+            coverage report -m  --omit="*/tests/*,*/migrations/*"
+            coverage html
+
+      - store_artifacts:
+          path: src/htmlcov
