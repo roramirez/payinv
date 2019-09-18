@@ -15,8 +15,12 @@ class SaleTable(BaseTable):
     total_value = tables.Column(verbose_name=_('Total Value'))
     concept = tables.Column(verbose_name=_('Concept'))
     done_at = tables.Column(verbose_name=_('Date'))
-    total_payments = tables.Column(verbose_name=_('Total Payments'))
-    total_invoices = tables.Column(verbose_name=_('Total Invoices'))
+
+    # FIXME: Make me happy. Sort this colums
+    total_payments = tables.Column(verbose_name=_('Total Payments'),
+                                   orderable=False)
+    total_invoices = tables.Column(verbose_name=_('Total Invoices'),
+                                   orderable=False)
 
     class Meta(BaseTable.Meta):
         model = Sale
