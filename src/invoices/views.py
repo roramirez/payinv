@@ -36,6 +36,3 @@ def invoice(request, pk):
     return render(request, 'invoices/show.html', {
         'invoice': invoice,
     })
-
-
-

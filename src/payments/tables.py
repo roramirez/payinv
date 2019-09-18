@@ -7,9 +7,8 @@ from django.utils.translation import ugettext as _
 
 class PaymentTable(BaseTable):
 
-
     id = tables.LinkColumn('payment', args=[Accessor('pk')],
-                             verbose_name=_('Payment'))
+                           verbose_name=_('Payment'))
 
     sale = tables.LinkColumn('sale', args=[Accessor('pk')],
                              verbose_name=_('Sale'))

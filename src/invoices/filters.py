@@ -3,6 +3,7 @@ from django.db.models import Q
 from invoices.models import Invoice
 from sales.models import Sale
 
+
 class InvoiceFilter(django_filters.FilterSet):
     q = django_filters.Filter(
         method='search',
@@ -10,11 +11,11 @@ class InvoiceFilter(django_filters.FilterSet):
     )
 
     sale = django_filters.ModelMultipleChoiceFilter(
-            field_name='sale',
-            queryset=Sale.objects.all(),
-            to_field_name='id',
-            label='Sale (id)',
-            )
+        field_name='sale',
+        queryset=Sale.objects.all(),
+        to_field_name='id',
+        label='Sale (id)',
+    )
 
     class Meta:
         model = Invoice

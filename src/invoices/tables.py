@@ -7,7 +7,7 @@ from django.utils.translation import ugettext as _
 
 class InvoiceTable(BaseTable):
     internal_id = tables.LinkColumn('invoice', args=[Accessor('pk')],
-                             verbose_name=_('Internal Id'))
+                                    verbose_name=_('Internal Id'))
 
     sale = tables.LinkColumn('sale', args=[Accessor('pk')],
                              verbose_name=_('Sale'))
@@ -17,4 +17,4 @@ class InvoiceTable(BaseTable):
 
     class Meta(BaseTable.Meta):
         model = Invoice
-        fields = ('internal_id', 'sale', 'total_value', 'date_to_pay' )
+        fields = ('internal_id', 'sale', 'total_value', 'date_to_pay')

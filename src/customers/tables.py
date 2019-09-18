@@ -6,7 +6,6 @@ from core.utils import yes_or_no
 from django.utils.translation import ugettext as _
 
 
-
 class CustomerTable(BaseTable):
     name = tables.LinkColumn('customer', args=[Accessor('pk')],
                              verbose_name=_('Name'))

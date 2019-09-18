@@ -48,6 +48,3 @@ def sale(request, pk):
     return render(request, 'sales/show.html', {
         'sale': sale,
     })
-
-
-

@@ -1,5 +1,4 @@
 from django.db import models
-from utilities.utils import csv_format
 from utilities.models import DateTimedModel
 from sales.models import Sale
 from django.utils.translation import ugettext as _

@@ -7,10 +7,10 @@ from django.utils.translation import ugettext as _
 
 class SaleTable(BaseTable):
     internal_id = tables.LinkColumn('sale', args=[Accessor('pk')],
-                             verbose_name=_('Internal Id'))
+                                    verbose_name=_('Internal Id'))
 
     customer = tables.LinkColumn('customer', args=[Accessor('pk')],
-                             verbose_name=_('Customer'))
+                                 verbose_name=_('Customer'))
 
     total_value = tables.Column(verbose_name=_('Total Value'))
     concept = tables.Column(verbose_name=_('Concept'))
@@ -20,4 +20,5 @@ class SaleTable(BaseTable):
 
     class Meta(BaseTable.Meta):
         model = Sale
-        fields = ('internal_id', 'customer', 'concept', 'total_value', 'done_at')
+        fields = ('internal_id', 'customer',
+                  'concept', 'total_value', 'done_at')

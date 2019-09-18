@@ -17,6 +17,7 @@ class PaymentEditView(ObjectEditView):
     def get_object(self, kwargs, request):
         return get_object_or_404(self.model, pk=kwargs['pk'])
 
+
 class PaymentListView(ObjectListView):
     queryset = Payment.objects.order_by('-id')
     table = tables.PaymentTable
@@ -28,12 +29,10 @@ class PaymentListView(ObjectListView):
     def alter_queryset(self, request):
         return self.queryset.all()
 
+
 def payment(request, pk):
     queryset = Payment.objects.all()
     payment = get_object_or_404(queryset, pk=pk)
     return render(request, 'payments/show.html', {
         'payment': payment,
     })
-
-
-

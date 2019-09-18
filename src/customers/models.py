@@ -20,7 +20,6 @@ class Customer(DateTimedModel):
     class Meta:
         verbose_name = _('Customer')
 
-
     def to_csv(self):
         return csv_format([
             self.name,

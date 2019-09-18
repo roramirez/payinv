@@ -35,6 +35,3 @@ def customer(request, pk):
     return render(request, 'customers/show.html', {
         'customer': customer,
     })
-
-
-

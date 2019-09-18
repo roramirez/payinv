@@ -1,7 +1,6 @@
-from django.forms import ModelForm, DateField, DateInput, CharField
+from django.forms import ModelForm, DateField, DateInput
 from sales.models import Sale
 from utilities.forms import BootstrapMixin
-import django_filters
 
 
 class SaleForm(ModelForm, BootstrapMixin):
