@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 14:11-0400\n"
+"POT-Creation-Date: 2019-09-17 23:20-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,6 +24,11 @@ msgstr "Si"
 msgid "No"
 msgstr ""
 
+#: customers/models.py:21 sales/tables.py:13 templates/customers/add.html:9
+#: templates/customers/show.html:12 templates/sales/show.html:48
+msgid "Customer"
+msgstr "Cliente"
+
 #: customers/tables.py:12 templates/customers/show.html:19
 #: templates/customers/show.html:44 templates/invoices/show.html:19
 #: templates/payments/show.html:19 templates/sales/show.html:19
@@ -32,7 +37,7 @@ msgstr "Nombre"
 
 #: customers/tables.py:13 templates/customers/show.html:52
 msgid "Address"
-msgstr "Direccion"
+msgstr "Dirección"
 
 #: customers/tables.py:14 templates/customers/show.html:56
 msgid "Active"
@@ -42,17 +47,22 @@ msgstr "Activo"
 msgid "Created At"
 msgstr "Creado"
 
+#: invoices/models.py:18 templates/invoices/show.html:12
+msgid "Invoice"
+msgstr "Factura"
+
 #: invoices/tables.py:10 sales/tables.py:10 templates/invoices/show.html:44
 #: templates/sales/show.html:44
 msgid "Internal Id"
 msgstr "Numero Interno"
 
-#: invoices/tables.py:13 payments/tables.py:11 templates/invoices/show.html:48
-#: templates/payments/show.html:44 templates/sales/show.html:12
+#: invoices/tables.py:13 payments/tables.py:15 sales/models.py:27
+#: templates/invoices/show.html:48 templates/payments/show.html:44
+#: templates/sales/show.html:12
 msgid "Sale"
 msgstr "Venta"
 
-#: invoices/tables.py:15 payments/tables.py:13 sales/tables.py:15
+#: invoices/tables.py:15 payments/tables.py:17 sales/tables.py:15
 #: templates/invoices/show.html:52 templates/payments/show.html:49
 #: templates/sales/show.html:52
 msgid "Total Value"
@@ -62,14 +72,13 @@ msgstr "Valor total"
 msgid "Date to Pay"
 msgstr "Fecha a pagar"
 
-#: payments/tables.py:14
+#: payments/models.py:17 payments/tables.py:12 templates/payments/show.html:12
+msgid "Payment"
+msgstr "Pago"
+
+#: payments/tables.py:18
 msgid "Pay date"
 msgstr "Fecha de pago"
-
-#: sales/tables.py:13 templates/customers/show.html:12
-#: templates/sales/show.html:48
-msgid "Customer"
-msgstr "Cliente"
 
 #: sales/tables.py:16
 msgid "Concept"
@@ -79,17 +88,55 @@ msgstr "Concept"
 msgid "Date"
 msgstr "Fecha"
 
+#: sales/tables.py:18 templates/sales/show.html:60
+#, fuzzy
+#| msgid "Payments"
+msgid "Total Payments"
+msgstr "Pagos"
+
+#: sales/tables.py:19 templates/sales/show.html:56
+#, fuzzy
+#| msgid "Invoices"
+msgid "Total Invoices"
+msgstr "Facturas"
+
 #: templates/_base.html:10
 msgid "description meta"
 msgstr ""
 
+#: templates/_base.html:24 templates/customers/list.html:5
+#: templates/customers/list.html:17
+msgid "Customers"
+msgstr "Clientes"
+
+#: templates/_base.html:26 templates/_base.html:35 templates/_base.html:44
+#: templates/_base.html:53
+msgid " New"
+msgstr " Nuevo"
+
+#: templates/_base.html:27 templates/_base.html:36 templates/_base.html:45
+#: templates/_base.html:54
+msgid " List"
+msgstr " Listado"
+
+#: templates/_base.html:33 templates/sales/list.html:5
+#: templates/sales/list.html:17
+msgid "Sales"
+msgstr "Ventas"
+
+#: templates/_base.html:42 templates/invoices/list.html:5
+#: templates/invoices/list.html:17
+msgid "Invoices"
+msgstr "Facturas"
+
+#: templates/_base.html:51 templates/payments/list.html:5
+#: templates/payments/list.html:17
+msgid "Payments"
+msgstr "Pagos"
+
 #: templates/create.html:28
 msgid "Copy"
 msgstr "Copiar"
-
-#: templates/customers/list.html:5
-msgid "Customers"
-msgstr "Clientes"
 
 #: templates/customers/list.html:12
 msgid "Add a customer"
@@ -123,21 +170,25 @@ msgstr "atras"
 msgid "Export"
 msgstr "Exportar"
 
+#: templates/inc/filter_panel.html:8
+msgid "Filter"
+msgstr "Filtros"
+
+#: templates/inc/filter_panel.html:24
+msgid "Apply"
+msgstr "Aplicar"
+
+#: templates/inc/filter_panel.html:27
+msgid "Clear"
+msgstr "Limpiar"
+
 #: templates/inc/search_panel.html:5 templates/inc/search_panel.html:10
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/invoices/list.html:5
-msgid "Invoices"
-msgstr "Facturas"
-
 #: templates/invoices/list.html:12
 msgid "Add a invoice"
 msgstr "Agregar una nueva factura"
-
-#: templates/invoices/show.html:12
-msgid "Invoice"
-msgstr "Factura"
 
 #: templates/invoices/show.html:32
 msgid "Edit this invoice"
@@ -151,17 +202,9 @@ msgstr "Mostrando"
 msgid "of"
 msgstr "de"
 
-#: templates/payments/list.html:5
-msgid "Payments"
-msgstr "Pagos"
-
 #: templates/payments/list.html:12
 msgid "Add a payment"
 msgstr "Agregar un nuevo pago"
-
-#: templates/payments/show.html:12
-msgid "Payment"
-msgstr "Pago"
 
 #: templates/payments/show.html:32
 msgid "Edit this payment"
@@ -175,10 +218,6 @@ msgstr "Pagado el"
 msgid "Notes"
 msgstr "Observaciones"
 
-#: templates/sales/list.html:5
-msgid "Sales"
-msgstr "Ventas"
-
 #: templates/sales/list.html:12
 msgid "Add a sale"
 msgstr "Agregar nueva venta"
@@ -187,11 +226,11 @@ msgstr "Agregar nueva venta"
 msgid "Edit this sale"
 msgstr "Editar esta venta"
 
-#: templates/utilities/obj_edit.html:7
+#: templates/utilities/obj_edit.html:7 templates/utilities/obj_edit.html:15
 msgid "Editing"
 msgstr "Editando"
 
-#: templates/utilities/obj_edit.html:7
+#: templates/utilities/obj_edit.html:7 templates/utilities/obj_edit.html:15
 msgid "Add a new"
 msgstr "Agregar nuevo"
 

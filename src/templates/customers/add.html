@@ -1,11 +1,12 @@
 {% extends 'utilities/obj_edit.html' %}
 
 {% load form_helpers %}
+{% load i18n %}
 
 
 {% block form %}
     <div class="panel panel-default">
-        <div class="panel-heading"><strong>Customer</strong></div>
+        <div class="panel-heading"><strong>{% trans 'Customer' %}</strong></div>
         <div class="panel-body">
             {% render_field form.name %}
             {% render_field form.cid %}
