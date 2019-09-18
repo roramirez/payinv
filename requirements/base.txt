@@ -9,10 +9,5 @@ django-cors-headers==2.4.0
 django-tables2==1.2.1
 django-widget-tweaks==1.4.1
 
-# doc
-coreapi==2.3.3
-Pygments==2.2.0
-
-
+# Database connector
 psycopg2==2.7.6
-click==6.7
