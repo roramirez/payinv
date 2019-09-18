@@ -34,6 +34,8 @@
                         <ul class="dropdown-menu">
                             <li><a href="{% url 'sale_add' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>{% trans ' New' %}</a></li>
                             <li><a href="{% url 'sale_list' %}"><i class="fa fa-search" aria-hidden="true"></i>{% trans ' List' %}</a></li>
+                            <li><a href="{% url 'sale_list_pending_invoice' %}"><i class="fa fa-ticket" aria-hidden="true"></i>{% trans ' Pending Invoice' %}</a></li>
+                            <li><a href="{% url 'sale_list_pending_payment' %}"><i class="fa fa-money" aria-hidden="true"></i>{% trans ' Pending Payment' %}</a></li>
                         </ul>
                     </li>
                  </ul>

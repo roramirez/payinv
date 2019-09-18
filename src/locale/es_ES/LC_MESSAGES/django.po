@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-17 23:20-0400\n"
+"POT-Creation-Date: 2019-09-18 16:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,11 +16,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: core/utils.py:5
+#: core/tests/test_utils.py:9 core/utils.py:5
 msgid "Yes"
 msgstr "Si"
 
-#: core/utils.py:5
+#: core/tests/test_utils.py:10 core/tests/test_utils.py:11 core/utils.py:5
 msgid "No"
 msgstr ""
 
@@ -47,7 +47,7 @@ msgstr "Activo"
 msgid "Created At"
 msgstr "Creado"
 
-#: invoices/models.py:18 templates/invoices/show.html:12
+#: invoices/models.py:19 templates/invoices/show.html:12
 msgid "Invoice"
 msgstr "Factura"
 
@@ -56,7 +56,7 @@ msgstr "Factura"
 msgid "Internal Id"
 msgstr "Numero Interno"
 
-#: invoices/tables.py:13 payments/tables.py:15 sales/models.py:27
+#: invoices/tables.py:13 payments/tables.py:15 sales/models.py:28
 #: templates/invoices/show.html:48 templates/payments/show.html:44
 #: templates/sales/show.html:12
 msgid "Sale"
@@ -72,7 +72,7 @@ msgstr "Valor total"
 msgid "Date to Pay"
 msgstr "Fecha a pagar"
 
-#: payments/models.py:17 payments/tables.py:12 templates/payments/show.html:12
+#: payments/models.py:19 payments/tables.py:12 templates/payments/show.html:12
 msgid "Payment"
 msgstr "Pago"
 
@@ -109,34 +109,39 @@ msgstr ""
 msgid "Customers"
 msgstr "Clientes"
 
-#: templates/_base.html:26 templates/_base.html:35 templates/_base.html:44
-#: templates/_base.html:53
+#: templates/_base.html:26 templates/_base.html:35 templates/_base.html:46
+#: templates/_base.html:55
 msgid " New"
 msgstr " Nuevo"
 
-#: templates/_base.html:27 templates/_base.html:36 templates/_base.html:45
-#: templates/_base.html:54
+#: templates/_base.html:27 templates/_base.html:36 templates/_base.html:47
+#: templates/_base.html:56
 msgid " List"
 msgstr " Listado"
 
 #: templates/_base.html:33 templates/sales/list.html:5
-#: templates/sales/list.html:17
+#: templates/sales/list.html:17 templates/sales/pending_invoice.html:5
+#: templates/sales/pending_payment.html:5
 msgid "Sales"
 msgstr "Ventas"
 
-#: templates/_base.html:42 templates/invoices/list.html:5
+#: templates/_base.html:37
+msgid " Pending Invoice"
+msgstr " Pendiente de Factura"
+
+#: templates/_base.html:38
+msgid " Pending Payment"
+msgstr " Pendiente de Pago"
+
+#: templates/_base.html:44 templates/invoices/list.html:5
 #: templates/invoices/list.html:17
 msgid "Invoices"
 msgstr "Facturas"
 
-#: templates/_base.html:51 templates/payments/list.html:5
+#: templates/_base.html:53 templates/payments/list.html:5
 #: templates/payments/list.html:17
 msgid "Payments"
 msgstr "Pagos"
-
-#: templates/create.html:28
-msgid "Copy"
-msgstr "Copiar"
 
 #: templates/customers/list.html:12
 msgid "Add a customer"
@@ -222,6 +227,14 @@ msgstr "Observaciones"
 msgid "Add a sale"
 msgstr "Agregar nueva venta"
 
+#: templates/sales/pending_invoice.html:11
+msgid "Sales pending invoices"
+msgstr "Ventas pendientes de facturas"
+
+#: templates/sales/pending_payment.html:11
+msgid "Sales pending payments"
+msgstr "Ventas pendientes de pagos"
+
 #: templates/sales/show.html:32
 msgid "Edit this sale"
 msgstr "Editar esta venta"
@@ -253,3 +266,6 @@ msgstr "Crear y guardar otro"
 #: templates/utilities/obj_edit.html:42
 msgid "Cancel"
 msgstr "Cancelar"
+
+#~ msgid "Copy"
+#~ msgstr "Copiar"

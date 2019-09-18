@@ -2,6 +2,8 @@ from django.shortcuts import render
 from sales.models import Sale
 from sales.forms import SaleForm, SaleFilter
 from sales import tables, filters
+from payments.models import Payment
+from invoices.models import Invoice
 from utilities.views import ObjectEditView, ObjectListView
 from django.core.urlresolvers import reverse_lazy
 from django.shortcuts import get_object_or_404
@@ -28,6 +30,16 @@ class SaleListView(ObjectListView):
     # Hook filter by request
     def alter_queryset(self, request):
         return self.queryset.all()
+
+
+class SaleListPendingInvoice(SaleListView):
+    queryset = Invoice.sales_pending().order_by('-id')
+    template_name = 'sales/pending_invoice.html'
+
+
+class SaleListPendingPayment(SaleListView):
+    queryset = Payment.sales_pending().order_by('-id')
+    template_name = 'sales/pending_payment.html'
 
 
 def sale(request, pk):

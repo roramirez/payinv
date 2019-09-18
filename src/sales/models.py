@@ -6,6 +6,7 @@ from django.db.models import Sum
 from django.utils.translation import ugettext as _
 
 
+
 class Sale(DateTimedModel):
     internal_id = models.CharField(max_length=100)
     customer = models.ForeignKey(Customer)
@@ -35,4 +36,9 @@ class Sale(DateTimedModel):
     def total_invoices(self):
        return self.invoice_set.all().aggregate(
                Sum('total_value'))['total_value__sum'] or 0
+
+    @staticmethod
+    def pending_invoice():
+        return Sale.objects.filter(id=1)
+
 
