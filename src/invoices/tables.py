@@ -6,7 +6,7 @@ from django.utils.translation import ugettext as _
 
 
 class InvoiceTable(BaseTable):
-    internal_id = tables.LinkColumn('sale', args=[Accessor('pk')],
+    internal_id = tables.LinkColumn('invoice', args=[Accessor('pk')],
                              verbose_name=_('Internal Id'))
 
     sale = tables.LinkColumn('sale', args=[Accessor('pk')],
