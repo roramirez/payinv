@@ -6,12 +6,10 @@
 
 {% block content %}
 <div class="pull-right">
-    {% if perms.tenancy.add_invoice %}
-        <a href="{% url 'invoice_add' %}" class="btn btn-primary">
-            <span class="fa fa-plus" aria-hidden="true"></span>
-            {% trans 'Add a invoice' %}
-        </a>
-    {% endif %}
+    <a href="{% url 'invoice_add' %}" class="btn btn-primary">
+        <span class="fa fa-plus" aria-hidden="true"></span>
+        {% trans 'Add a invoice' %}
+    </a>
     {% include 'inc/export_button.html' with obj_type='invoices' %}
 </div>
 <h1>{% trans 'Invoices' %}</h1>
