@@ -1,6 +1,7 @@
 {
   "name": "payinv",
   "version": "0.0.1",
+  "homepage": "https://github.com/roramirez/payinv",
   "description": "Not jet",
   "devDependencies": {
     "bower": "^1.7.7"

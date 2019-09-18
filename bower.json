@@ -2,6 +2,7 @@
   "name": "payinv",
   "description": "PayInv",
   "version": "0.0.1",
+  "homepage": "https://github.com/roramirez/payinv",
   "dependencies": {
     "bootstrap": "3.3.x",
     "font-awesome": "4.4.x",
