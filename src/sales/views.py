@@ -21,7 +21,7 @@ class SaleEditView(ObjectEditView):
 
 
 class SaleListView(ObjectListView):
-    queryset = Sale.objects.order_by('-id')
+    queryset = Sale.objects.select_related('customer').order_by('-id')
     table = tables.SaleTable
     template_name = 'sales/list.html'
     filter = filters.SaleFilter
@@ -33,12 +33,14 @@ class SaleListView(ObjectListView):
 
 
 class SaleListPendingInvoice(SaleListView):
-    queryset = Invoice.sales_pending().order_by('-id')
+    queryset = Invoice.sales_pending()\
+            .select_related('customer').order_by('-id')
     template_name = 'sales/pending_invoice.html'
 
 
 class SaleListPendingPayment(SaleListView):
-    queryset = Payment.sales_pending().order_by('-id')
+    queryset = Payment.sales_pending().\
+            select_related('customer').order_by('-id')
     template_name = 'sales/pending_payment.html'
 
 
