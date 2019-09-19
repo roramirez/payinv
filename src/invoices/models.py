@@ -2,7 +2,8 @@ from django.db import models
 from utilities.models import DateTimedModel
 from sales.models import Sale
 from django.utils.translation import ugettext as _
-from django.db.models import OuterRef, Subquery
+from django.db.models import OuterRef, Subquery, Sum
+from django.db.models.functions import Coalesce
 
 
 class Invoice(DateTimedModel):
@@ -26,8 +27,8 @@ class Invoice(DateTimedModel):
 
     @staticmethod
     def sales_pending():
+        invoices = Invoice.objects.filter(sale=OuterRef('pk')).values('sale')
+        sum_invoices = invoices.annotate(
+            sum=Coalesce(Sum('total_value'), 0)).values('sum')
         return Sale.objects.filter(
-            total_value__gt=Subquery(
-                Invoice.objects.filter(sale=OuterRef('id')
-                                       ).values('total_value').all()
-            ))
+            total_value__gt=Coalesce(Subquery(sum_invoices), 0))
