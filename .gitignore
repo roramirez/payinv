@@ -53,3 +53,5 @@ src/htmlcov
 
 # .mo files
 *.mo
+
+src/static
