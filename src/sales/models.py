@@ -34,7 +34,3 @@ class Sale(DateTimedModel):
     def total_invoices(self):
         return self.invoice_set.all().aggregate(
             Sum('total_value'))['total_value__sum'] or 0
-
-    @staticmethod
-    def pending_invoice():
-        return Sale.objects.filter(id=1)
