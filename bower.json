@@ -1,7 +1,7 @@
 {
   "name": "payinv",
   "description": "PayInv",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "homepage": "https://github.com/roramirez/payinv",
   "dependencies": {
     "bootstrap": "3.3.x",
