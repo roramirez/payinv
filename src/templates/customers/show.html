@@ -53,6 +53,18 @@
                     <td>{{ customer.address }}</td>
                 </tr>
                 <tr>
+                    <td>{% trans 'Total sales' %}</td>
+                    <td>{{ customer.total_sales }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Total invoice' %}</td>
+                    <td>{{ customer.total_invoices }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Total payments' %}</td>
+                    <td>{{ customer.total_payments }}</td>
+                </tr>
+                <tr>
                     <td>{% trans 'Active' %}</td>
                     <td>{{ customer.active|yes_or_no }}</td>
                 </tr>
