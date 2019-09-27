@@ -3,6 +3,7 @@ from utilities.models import DateTimedModel
 from customers.models import Customer
 from django.db.models import Sum
 from django.utils.translation import ugettext as _
+from utilities.utils import csv_format
 
 
 class Sale(DateTimedModel):
@@ -21,6 +22,17 @@ class Sale(DateTimedModel):
 
     def __str__(self):
         return "{} / {} ".format(self.internal_id, self.customer)
+
+    def to_csv(self):
+        return csv_format([
+            self.internal_id,
+            self.customer,
+            self.total_value,
+            self.done_at,
+            self.notes,
+            self.total_invoices,
+            self.total_payments
+        ])
 
     class Meta:
         verbose_name = _('Sale')
