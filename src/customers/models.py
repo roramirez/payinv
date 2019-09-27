@@ -48,3 +48,11 @@ class Customer(DateTimedModel):
         return invoices.models.Invoice.objects.filter(
             sale_id__in=sales_id).aggregate(
             Sum('total_value'))['total_value__sum'] or 0
+
+    @property
+    def count_sales_invoices_pending(self):
+        return invoices.models.Invoice.sales_pending_by_customer(self).count()
+
+    @property
+    def count_sales_payments_pending(self):
+        return payments.models.Payment.sales_pending_by_customer(self).count()

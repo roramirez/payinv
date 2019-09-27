@@ -32,3 +32,14 @@ class SaleModelTestCase(TestCase):
         InvoiceFactory(sale=sale, total_value=102)
         InvoiceFactory(sale=sale, total_value=103)
         self.assertEqual(customer.total_invoices, 205)
+
+    def test_counter_pendings_payments_invoices(self):
+        """ Should return counter for pending invoices and payment sales"""
+
+        customer = CustomerFactory()
+        SaleFactory(customer=customer)
+        sale = SaleFactory(customer=customer)
+        InvoiceFactory(sale=sale, total_value=sale.total_value)
+
+        self.assertEqual(customer.count_sales_payments_pending, 2)
+        self.assertEqual(customer.count_sales_invoices_pending, 1)
