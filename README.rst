@@ -33,7 +33,7 @@ First to all you be sure in your system has installed Python 3, PostgreSQL and N
       database connection credencials and 
       `SECRET_KEY <https://docs.djangoproject.com/en/1.11/ref/settings/#std:setting-SECRET_KEY>`_
 
-   B) Other way is set by enviroments variables::
+   B) Other way is set by environment variables::
 
        export PAYINV_ENVIRONMENT=production
        export PAYINV_DATABASE_PASSWORD=mypassword
