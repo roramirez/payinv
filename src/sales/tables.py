@@ -11,7 +11,7 @@ class SaleTable(BaseTable):
     internal_id = tables.LinkColumn('sale', args=[Accessor('pk')],
                                     verbose_name=_('Internal Id'))
 
-    customer = tables.LinkColumn('customer', args=[Accessor('pk')],
+    customer = tables.LinkColumn('customer', args=[Accessor('customer_id')],
                                  verbose_name=_('Customer'))
 
     total_value = tables.Column(verbose_name=_('Total Value'))
