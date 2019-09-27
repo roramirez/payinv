@@ -2,7 +2,6 @@
 Django==1.11.24
 django_registration==2.1.2
 Markdown==2.6.6
-django-tables2==1.2.1
 django-filter==1.1
 django-extensions==2.1.2
 django-cors-headers==2.4.0
