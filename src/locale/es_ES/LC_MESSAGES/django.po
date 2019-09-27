@@ -1,4 +1,4 @@
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# Copyright (C) 2019
 # This file is distributed under the same license as the payinv package.
 # Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>, 2019.
 #
@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-18 22:15+0000\n"
+"POT-Creation-Date: 2019-09-24 19:55-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -24,7 +24,7 @@ msgstr "Si"
 msgid "No"
 msgstr ""
 
-#: customers/models.py:21 sales/tables.py:13 templates/customers/add.html:9
+#: customers/models.py:24 sales/tables.py:13 templates/customers/add.html:9
 #: templates/customers/show.html:12 templates/sales/show.html:48
 msgid "Customer"
 msgstr "Cliente"
@@ -39,7 +39,7 @@ msgstr "Nombre"
 msgid "Address"
 msgstr "Dirección"
 
-#: customers/tables.py:13 templates/customers/show.html:56
+#: customers/tables.py:13 templates/customers/show.html:68
 msgid "Active"
 msgstr "Activo"
 
@@ -47,7 +47,7 @@ msgstr "Activo"
 msgid "Created At"
 msgstr "Creado"
 
-#: invoices/models.py:19 templates/invoices/add.html:8
+#: invoices/models.py:20 templates/invoices/add.html:9
 #: templates/invoices/show.html:12
 msgid "Invoice"
 msgstr "Factura"
@@ -59,7 +59,7 @@ msgstr "Numero Interno"
 
 #: invoices/tables.py:13 payments/tables.py:14 sales/models.py:26
 #: templates/invoices/show.html:48 templates/payments/show.html:44
-#: templates/sales/add.html:8 templates/sales/show.html:12
+#: templates/sales/add.html:9 templates/sales/show.html:12
 msgid "Sale"
 msgstr "Venta"
 
@@ -73,7 +73,7 @@ msgstr "Valor total"
 msgid "Date to Pay"
 msgstr "Fecha a pagar"
 
-#: payments/models.py:18 payments/tables.py:11 templates/payments/add.html:8
+#: payments/models.py:19 payments/tables.py:11 templates/payments/add.html:9
 #: templates/payments/show.html:12
 msgid "Payment"
 msgstr "Pago"
@@ -122,7 +122,7 @@ msgid " List"
 msgstr " Listado"
 
 #: templates/_base.html:33 templates/sales/list.html:5
-#: templates/sales/list.html:17 templates/sales/pending_invoice.html:5
+#: templates/sales/list.html:15 templates/sales/pending_invoice.html:5
 #: templates/sales/pending_payment.html:5
 msgid "Sales"
 msgstr "Ventas"
@@ -136,12 +136,12 @@ msgid " Pending Payment"
 msgstr " Pendiente de Pago"
 
 #: templates/_base.html:44 templates/invoices/list.html:5
-#: templates/invoices/list.html:17
+#: templates/invoices/list.html:15
 msgid "Invoices"
 msgstr "Facturas"
 
 #: templates/_base.html:53 templates/payments/list.html:5
-#: templates/payments/list.html:17
+#: templates/payments/list.html:15
 msgid "Payments"
 msgstr "Pagos"
 
@@ -157,9 +157,21 @@ msgstr "Editar este cliente"
 msgid "CID"
 msgstr "ID de empresa"
 
-#: templates/home.html:20
-msgid "Browse"
-msgstr ""
+#: templates/customers/show.html:56
+msgid "Total sales"
+msgstr "Total ventas"
+
+#: templates/customers/show.html:60
+msgid "Total invoice"
+msgstr "Total Facturas"
+
+#: templates/customers/show.html:64
+msgid "Total payments"
+msgstr "Total Pagos"
+
+#: templates/home.html:9
+msgid "Welcome"
+msgstr "Bienvenido"
 
 #: templates/inc/created_updated.html:3
 msgid "Created"
@@ -193,7 +205,7 @@ msgstr "Limpiar"
 msgid "Search"
 msgstr "Buscar"
 
-#: templates/invoices/list.html:12
+#: templates/invoices/list.html:11
 msgid "Add a invoice"
 msgstr "Agregar una nueva factura"
 
@@ -209,7 +221,7 @@ msgstr "Mostrando"
 msgid "of"
 msgstr "de"
 
-#: templates/payments/list.html:12
+#: templates/payments/list.html:11
 msgid "Add a payment"
 msgstr "Agregar un nuevo pago"
 
@@ -225,7 +237,7 @@ msgstr "Pagado el"
 msgid "Notes"
 msgstr "Observaciones"
 
-#: templates/sales/list.html:12
+#: templates/sales/list.html:11
 msgid "Add a sale"
 msgstr "Agregar nueva venta"
 
