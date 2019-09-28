@@ -1,0 +1,25 @@
+{% extends 'utilities/obj_edit.html' %}
+
+{% load form_helpers %}
+{% load i18n %}
+
+{% block form %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>{% trans 'Detail Sale' %}</strong>
+        </div>
+        {% include 'sales/_table_detail.html' with sale=sale %}
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>{% trans 'Payment' %}</strong></div>
+        <div class="panel-body">
+            {% render_field form.sale.as_hidden %}
+            {% render_field form.total_value %}
+            {% render_field form.pay_at %}
+            {% render_field form.notes %}
+        </div>
+    </div>
+{% endblock %}
+
+

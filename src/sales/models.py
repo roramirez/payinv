@@ -4,6 +4,7 @@ from customers.models import Customer
 from django.db.models import Sum
 from django.utils.translation import ugettext as _
 from utilities.utils import csv_format
+from django.urls import reverse
 
 
 class Sale(DateTimedModel):
@@ -36,6 +37,9 @@ class Sale(DateTimedModel):
 
     class Meta:
         verbose_name = _('Sale')
+
+    def get_absolute_url(self):
+        return reverse('sale', args=[self.pk])
 
     @property
     def total_payments(self):

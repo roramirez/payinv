@@ -1,0 +1,24 @@
+{% load i18n %}
+<table class="table table-hover panel-body">
+    <tr>
+        <td>{% trans 'Internal Id' %}</td>
+        <td>{{ sale.internal_id }}</td>
+    </tr>
+    <tr>
+        <td>{% trans 'Customer' %}</td>
+        <td>{{ sale.customer }}</td>
+    </tr>
+    <tr>
+        <td>{% trans 'Total Value' %}</td>
+        <td>{{ sale.total_value }}</td>
+    </tr>
+    <tr>
+        <td>{% trans 'Total Invoices' %}</td>
+        <td>{{ sale.total_invoices }}</td>
+    </tr>
+    <tr>
+        <td>{% trans 'Total Payments' %}</td>
+        <td>{{ sale.total_payments }}</td>
+    </tr>
+</table>
+

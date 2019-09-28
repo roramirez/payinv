@@ -1,0 +1,19 @@
+{% load i18n %}
+
+<a href="{% url 'sale_edit' pk=record.pk %}" class="btn btn-xs btn-warning">
+    <span class="fa fa-pencil" aria-hidden="true"></span>
+    {% trans 'Edit' %}
+</a>
+
+<a href="{% url 'payment_to_sale' sale_id=record.pk %}" class="btn btn-xs btn-success">
+    <span class="fa fa-money" aria-hidden="true"></span>
+    {% trans 'Add payment' %}
+</a>
+
+<a href="{% url 'invoice_to_sale' sale_id=record.pk %}" class="btn btn-xs btn-notice">
+    <span class="fa fa-ticket" aria-hidden="true"></span>
+    {% trans 'Add invoice' %}
+</a>
+
+
+

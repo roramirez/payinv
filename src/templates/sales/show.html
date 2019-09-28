@@ -27,9 +27,18 @@
     </div>
 </div>
 <div class="pull-right">
-        <a href="{% url 'sale_edit' pk=sale.pk %}" class="btn btn-warning">
+        <a href="{% url 'sale_edit' pk=sale.pk %}" class="btn btn-sm btn-warning">
             <span class="fa fa-pencil" aria-hidden="true"></span>
             {% trans 'Edit this sale' %}
+        </a>
+        <a href="{% url 'payment_to_sale' sale_id=sale.pk %}" class="btn btn-sm btn-success">
+            <span class="fa fa-money" aria-hidden="true"></span>
+            {% trans 'New payment' %}
+        </a>
+
+        <a href="{% url 'invoice_to_sale' sale_id=sale.pk %}" class="btn btn-sm btn-info">
+            <span class="fa fa-ticket" aria-hidden="true"></span>
+            {% trans 'New invoice' %}
         </a>
 </div>
 
@@ -39,30 +48,7 @@
             <div class="panel-heading">
                 {{ sale }}
             </div>
-            <table class="table table-hover panel-body">
-                <tr>
-                    <td>{% trans 'Internal Id' %}</td>
-                    <td>{{ sale.internal_id }}</td>
-                </tr>
-                <tr>
-                    <td>{% trans 'Customer' %}</td>
-                    <td>{{ sale.customer }}</td>
-                </tr>
-                <tr>
-                    <td>{% trans 'Total Value' %}</td>
-                    <td>{{ sale.total_value }}</td>
-                </tr>
-                <tr>
-                    <td>{% trans 'Total Invoices' %}</td>
-                    <td>{{ sale.total_invoices }}</td>
-                </tr>
-                <tr>
-                    <td>{% trans 'Total Payments' %}</td>
-                    <td>{{ sale.total_payments }}</td>
-                </tr>
-
-
-            </table>
+            {% include 'sales/_table_detail.html' with sale=sale %}
         </div>
         {% with sale.custom_fields as custom_fields %}
             {% include 'inc/custom_fields_panel.html' %}

@@ -24,6 +24,8 @@ class SaleTable(BaseTable):
     total_invoices = tables.LinkColumn(verbose_name=_('Total Invoices'),
                                        orderable=False)
 
+    actions = tables.TemplateColumn(template_name="sales/list_actions.html")
+
     class Meta(BaseTable.Meta):
         model = Sale
         fields = ('internal_id', 'customer',
