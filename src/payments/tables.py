@@ -10,7 +10,7 @@ class PaymentTable(BaseTable):
     id = tables.LinkColumn('payment', args=[Accessor('pk')],
                            verbose_name=_('Payment'))
 
-    sale = tables.LinkColumn('sale', args=[Accessor('pk')],
+    sale = tables.LinkColumn('sale', args=[Accessor('sale_id')],
                              verbose_name=_('Sale'))
 
     total_value = tables.Column(verbose_name=_('Total Value'))
