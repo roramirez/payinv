@@ -9,7 +9,7 @@ class InvoiceTable(BaseTable):
     internal_id = tables.LinkColumn('invoice', args=[Accessor('pk')],
                                     verbose_name=_('Internal Id'))
 
-    sale = tables.LinkColumn('sale', args=[Accessor('pk')],
+    sale = tables.LinkColumn('sale', args=[Accessor('sale_id')],
                              verbose_name=_('Sale'))
 
     total_value = tables.Column(verbose_name=_('Total Value'))
