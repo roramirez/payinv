@@ -41,7 +41,7 @@
                     <td>{{payment.customer__name}}</td>
                     <td>
                      <span class="badge">
-                         <a href="{% url 'sale_list_pending_payment' %}?customer={{invoice.customer}}">
+                         <a href="{% url 'sale_list_pending_payment' %}?customer={{payment.customer}}">
                              {{payment.count}}
                          </a>
                      </span>
