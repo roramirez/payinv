@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-28 14:12-0400\n"
+"POT-Creation-Date: 2019-09-29 12:36-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -106,42 +106,48 @@ msgstr "Facturas"
 msgid "description meta"
 msgstr ""
 
-#: templates/_base.html:24 templates/customers/list.html:5
+#: templates/_base.html:20
+msgid "Home"
+msgstr ""
+
+#: templates/_base.html:26 templates/customers/list.html:5
 #: templates/customers/list.html:17
 msgid "Customers"
 msgstr "Clientes"
 
-#: templates/_base.html:26 templates/_base.html:35 templates/_base.html:46
-#: templates/_base.html:55
+#: templates/_base.html:28 templates/_base.html:37 templates/_base.html:48
+#: templates/_base.html:57
 msgid " New"
 msgstr " Nuevo"
 
-#: templates/_base.html:27 templates/_base.html:36 templates/_base.html:47
-#: templates/_base.html:56
+#: templates/_base.html:29 templates/_base.html:38 templates/_base.html:49
+#: templates/_base.html:58
 msgid " List"
 msgstr " Listado"
 
-#: templates/_base.html:33 templates/sales/list.html:5
+#: templates/_base.html:35 templates/sales/list.html:5
 #: templates/sales/list.html:15 templates/sales/pending_invoice.html:5
 #: templates/sales/pending_payment.html:5
 msgid "Sales"
 msgstr "Ventas"
 
-#: templates/_base.html:37
+#: templates/_base.html:39
 msgid " Pending Invoice"
 msgstr " Pendiente de Factura"
 
-#: templates/_base.html:38
+#: templates/_base.html:40
 msgid " Pending Payment"
 msgstr " Pendiente de Pago"
 
-#: templates/_base.html:44 templates/customers/show.html:92
-#: templates/invoices/list.html:5 templates/invoices/list.html:15
+#: templates/_base.html:46 templates/customers/show.html:92
+#: templates/home.html:21 templates/invoices/list.html:5
+#: templates/invoices/list.html:15
 msgid "Invoices"
 msgstr "Facturas"
 
-#: templates/_base.html:53 templates/customers/show.html:87
-#: templates/payments/list.html:5 templates/payments/list.html:15
+#: templates/_base.html:55 templates/customers/show.html:87
+#: templates/home.html:26 templates/payments/list.html:5
+#: templates/payments/list.html:15
 msgid "Payments"
 msgstr "Pagos"
 
@@ -173,9 +179,21 @@ msgstr "Total Pagos"
 msgid "Sales Pendings"
 msgstr "Ventas pendientes de facturas"
 
-#: templates/home.html:9
+#: templates/home.html:10
 msgid "Welcome"
 msgstr "Bienvenido"
+
+#: templates/home.html:15
+msgid "Pendings"
+msgstr "Pendientes"
+
+#: templates/home.html:35
+msgid "Pending Payment By Customer"
+msgstr "Pagos pendientes por cliente"
+
+#: templates/home.html:56
+msgid "Pending Invoice By Customer"
+msgstr "Facturas pendientes por cliente"
 
 #: templates/inc/created_updated.html:3
 msgid "Created"
