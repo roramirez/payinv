@@ -5,6 +5,14 @@ Change Log
 This document records all notable changes to `Payinv <https://github.com/roramirez/payinv>`_.
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
+`0.2.0`_ (Unreleased)
+---------------------
+* New home page with counter for Pendings.
+* Add link for payments and invoices in sales list
+* Add feature to add payment or invoice by short quick link to sale.
+* Include total values for sales, invoices and payments in Customer.
+* Add export to CSV format for sales.
+* Add tests.
 
 `0.1.2`_ (2019-09-22)
 ---------------------
