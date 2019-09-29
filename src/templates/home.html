@@ -1,6 +1,7 @@
 {% extends '_base.html' %}
 {% load static %}
 {% load i18n %}
+{% load render_table from django_tables2 %}
 
 {% block content %}
 
@@ -9,7 +10,66 @@
         <h1 class="logo">PayInv <small>{% trans 'Welcome' %}</small></h1>
     </div>
     <div class="row">
-        <div class="col-xs-offset-3  col-md-6">
+        <div class="col-lg-3">
+            <h2>
+                {% trans 'Pendings' %}
+            </h2>
+            <div class="bs-component">
+                <ul class="nav nav-pills">
+                    <li>
+                        <a href="{% url 'sale_list_pending_invoice' %}">
+                            {% trans 'Invoices' %} <span class="badge">{{dashboard.invoices_pending.count}}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'sale_list_pending_payment' %}">
+                            {% trans 'Payments' %}<span class="badge">{{dashboard.payments_pending.count}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <h2>
+                {% trans 'Pending Payment By Customer' %}
+            </h2>
+
+            <table class="table table-hover panel-body">
+            {% for payment in dashboard.payments_pending_by_customer %}
+                <tr>
+                    <td>{{payment.customer__name}}</td>
+                    <td>
+                     <span class="badge">
+                         <a href="{% url 'sale_list_pending_payment' %}?customer={{invoice.customer}}">
+                             {{payment.count}}
+                         </a>
+                     </span>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
+        </div>
+
+        <div class="col-lg-4">
+            <h2>
+                {% trans 'Pending Invoice By Customer' %}
+            </h2>
+
+            <table class="table table-hover panel-body">
+            {% for invoice in dashboard.invoices_pending_by_customer %}
+                <tr>
+                    <td>{{invoice.customer__name}}</td>
+                    <td>
+                     <span class="badge">
+                         <a href="{% url 'sale_list_pending_invoice' %}?customer={{invoice.customer}}">
+                             {{invoice.count}}
+                         </a>
+                     </span>
+                    </td>
+                </tr>
+            {% endfor %}
+            </table>
         </div>
     </div>
 </div>
