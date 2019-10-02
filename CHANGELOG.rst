@@ -5,6 +5,10 @@ Change Log
 This document records all notable changes to `Payinv <https://github.com/roramirez/payinv>`_.
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
+`0.2.1`_ (2019-10-02)
+---------------------
+* Bugfix django_tables2 dependency update there not showing data from sales list
+
 `0.2.0`_ (2019-09-30)
 ---------------------
 * New home page with counter for Pendings.

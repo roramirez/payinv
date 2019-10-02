@@ -5,7 +5,7 @@ Markdown==2.6.6
 django-filter==1.1
 django-extensions==2.1.2
 django-cors-headers==2.4.0
-django-tables2==1.2.1
+django-tables2==1.21.1
 django-widget-tweaks==1.4.1
 
 # Database connector
