@@ -65,7 +65,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.setdefault(
             'PAYINV_DATABASE_NAME',
-            'payinv_{}'.format(os.environ['PAYINV_ENVIRONMENT'])),
+            'payinv_{}'.format(get_secret('PAYINV_ENVIRONMENT', 'production'))),
         'USER': get_secret('PAYINV_DATABASE_USER', 'payinv'),
         'PASSWORD': get_secret('PAYINV_DATABASE_PASSWORD'),
         'HOST': os.environ.setdefault('PAYINV_DATABASE_HOST', '127.0.0.1'),

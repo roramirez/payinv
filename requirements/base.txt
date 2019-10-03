@@ -10,3 +10,8 @@ django-widget-tweaks==1.4.1
 
 # Database connector
 psycopg2==2.7.6
+
+# Heroku and deploy integration
+gunicorn==19.9.0
+whitenoise==4.1.4
+django-heroku==0.3.1
