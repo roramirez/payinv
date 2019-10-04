@@ -54,7 +54,11 @@
                 </tr>
                 <tr>
                     <td>{% trans 'Total sales' %}</td>
-                    <td>{{ customer.total_sales }}</td>
+                    <td>
+                        <a href="{% url 'sale_list' %}?customer={{ customer.id }}">
+                            {{ customer.total_sales }}
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>{% trans 'Total invoice' %}</td>
