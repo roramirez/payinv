@@ -13,8 +13,9 @@ class CustomerFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Customer
 
-    name = factory.Sequence(lambda n: 'Name %s' % n)
+    name = factory.Faker('company')
     active = True
+    cid = factory.Faker('ssn')
     address = factory.Faker('address')
 
 
