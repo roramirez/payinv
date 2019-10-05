@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-09-29 12:36-0400\n"
+"POT-Creation-Date: 2019-10-05 17:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -65,7 +65,7 @@ msgstr "Venta"
 
 #: invoices/tables.py:15 payments/tables.py:16 sales/tables.py:17
 #: templates/invoices/show.html:52 templates/payments/show.html:49
-#: templates/sales/_table_detail.html:12
+#: templates/sales/_table_detail.html:16
 msgid "Total Value"
 msgstr "Valor total"
 
@@ -90,17 +90,13 @@ msgstr "Concept"
 msgid "Date"
 msgstr "Fecha"
 
-#: sales/tables.py:22 templates/sales/_table_detail.html:20
-#, fuzzy
-#| msgid "Payments"
+#: sales/tables.py:22 templates/sales/_table_detail.html:24
 msgid "Total Payments"
-msgstr "Pagos"
+msgstr "Total Pagos"
 
-#: sales/tables.py:24 templates/sales/_table_detail.html:16
-#, fuzzy
-#| msgid "Invoices"
+#: sales/tables.py:24 templates/sales/_table_detail.html:20
 msgid "Total Invoices"
-msgstr "Facturas"
+msgstr "Total Facturas"
 
 #: templates/_base.html:10
 msgid "description meta"
@@ -108,7 +104,7 @@ msgstr ""
 
 #: templates/_base.html:20
 msgid "Home"
-msgstr ""
+msgstr "Inicio"
 
 #: templates/_base.html:26 templates/customers/list.html:5
 #: templates/customers/list.html:17
@@ -255,27 +251,35 @@ msgstr "Editar este pago"
 msgid "Pay at"
 msgstr "Pagado el"
 
-#: templates/payments/show.html:57
+#: templates/payments/show.html:57 templates/sales/_table_detail.html:28
 msgid "Notes"
 msgstr "Observaciones"
 
+#: templates/sales/_table_detail.html:12
+msgid "Customer ID"
+msgstr "ID Cliente"
+
 #: templates/sales/add_invoice.html:10 templates/sales/add_payment.html:9
 msgid "Detail Sale"
-msgstr ""
+msgstr "Detalle de la venta"
 
 #: templates/sales/list.html:11
 msgid "Add a sale"
 msgstr "Agregar nueva venta"
 
 #: templates/sales/list_actions.html:5
+msgid "Show"
+msgstr "Mostrar"
+
+#: templates/sales/list_actions.html:10
 msgid "Edit"
 msgstr "Editar"
 
-#: templates/sales/list_actions.html:10
+#: templates/sales/list_actions.html:15
 msgid "Add payment"
 msgstr "Agregar pago"
 
-#: templates/sales/list_actions.html:15
+#: templates/sales/list_actions.html:20
 msgid "Add invoice"
 msgstr "Agregar factura"
 

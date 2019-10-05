@@ -1,5 +1,10 @@
 {% load i18n %}
 
+<a href="{% url 'sale' pk=record.pk %}" class="btn btn-xs btn-default">
+    <span class="fa fa-eye" aria-hidden="true"></span>
+    {% trans 'Show' %}
+</a>
+
 <a href="{% url 'sale_edit' pk=record.pk %}" class="btn btn-xs btn-warning">
     <span class="fa fa-pencil" aria-hidden="true"></span>
     {% trans 'Edit' %}
@@ -14,6 +19,3 @@
     <span class="fa fa-ticket" aria-hidden="true"></span>
     {% trans 'Add invoice' %}
 </a>
-
-
-
