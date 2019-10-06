@@ -14,7 +14,9 @@ class InvoiceTable(BaseTable):
 
     total_value = tables.Column(verbose_name=_('Total Value'))
     date_to_pay = tables.Column(verbose_name=_('Date to Pay'))
+    date_issue = tables.Column(verbose_name=_('Date of Issue'))
 
     class Meta(BaseTable.Meta):
         model = Invoice
-        fields = ('internal_id', 'sale', 'total_value', 'date_to_pay')
+        fields = ('internal_id', 'sale', 'total_value', 'date_to_pay',
+                  'date_issue')
