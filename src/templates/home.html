@@ -11,22 +11,30 @@
     </div>
     <div class="row">
         <div class="col-lg-3">
-            <h2>
-                {% trans 'Pendings' %}
-            </h2>
-            <div class="bs-component">
-                <ul class="nav nav-pills">
-                    <li>
-                        <a href="{% url 'sale_list_pending_invoice' %}">
-                            {% trans 'Invoices' %} <span class="badge">{{dashboard.invoices_pending.count}}</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="{% url 'sale_list_pending_payment' %}">
-                            {% trans 'Payments' %}<span class="badge">{{dashboard.payments_pending.count}}</span>
-                        </a>
-                    </li>
-                </ul>
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <b>{% trans 'Pendings Summary' %}</b>
+                    </div>
+                        <table class="table table-hover panel-body">
+                        <tr>
+                            <td>{% trans 'Payments' %}
+                                <a href="{% url 'sale_list_pending_payment' %}">
+                                   <span class="badge">{{dashboard.payments_pending.count}}</span>
+                                </a>
+                             </td>
+                            <td>{{dashboard.payments_pending_total }}</td>
+                        </tr>
+                        <tr>
+                            <td>{% trans 'Invoices' %}
+                                <a href="{% url 'sale_list_pending_invoice' %}">
+                                    <span class="badge">{{dashboard.invoices_pending.count}}</span>
+                                </a>
+                            </td>
+                            <td>{{dashboard.invoices_pending_total }}</td>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
 
