@@ -9,7 +9,7 @@ from invoices.models import Invoice
 
 def set_values_created_at(app, schema):
     """ Set old records as `date_issue` as `created_at`"""
-    invoices = Invoices.objects.all()
+    invoices = Invoice.objects.all()
     for invoice in invoices:
         invoice.date_issue = invoice.created_at
         invoice.save(update_fields=['date_issue'])

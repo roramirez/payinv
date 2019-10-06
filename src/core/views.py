@@ -17,8 +17,6 @@ def HomePage(request):
     payments_pending_total = payments_pending.aggregate(
             Sum('total_value'))['total_value__sum'] or 0
 
-
-
     invoices_pending_by_customer = invoices_pending.values(
             'customer__name', 'customer').annotate(
                     count=Count('customer')).order_by('-count')
