@@ -2,6 +2,7 @@ import django_filters
 from django.db.models import Q
 from invoices.models import Invoice
 from sales.models import Sale
+import customers
 
 
 class InvoiceFilter(django_filters.FilterSet):
@@ -10,11 +11,17 @@ class InvoiceFilter(django_filters.FilterSet):
         label='Search',
     )
 
-    sale = django_filters.ModelMultipleChoiceFilter(
+    sale = django_filters.ModelChoiceFilter(
         field_name='sale',
         queryset=Sale.objects.all(),
         to_field_name='id',
         label='Sale (id)',
+    )
+
+    customer = django_filters.ModelChoiceFilter(
+        queryset=customers.models.Customer.objects.all(),
+        field_name='sale__customer_id',
+        label='Customer (id)',
     )
 
     class Meta:
