@@ -62,11 +62,19 @@
                 </tr>
                 <tr>
                     <td>{% trans 'Total invoice' %}</td>
-                    <td>{{ customer.total_invoices }}</td>
+                    <td>
+                        <a href="{% url 'invoice_list' %}?customer={{ customer.id }}">
+                            {{ customer.total_invoices }}
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>{% trans 'Total payments' %}</td>
-                    <td>{{ customer.total_payments }}</td>
+                    <td>
+                        <a href="{% url 'payment_list' %}?customer={{ customer.id }}">
+                            {{ customer.total_payments }}
+                        </a>
+                    </td>
                 </tr>
                 <tr>
                     <td>{% trans 'Active' %}</td>

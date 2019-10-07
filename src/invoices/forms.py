@@ -1,6 +1,8 @@
-from django.forms import ModelForm, DateField, DateInput
+from django.forms import ModelForm, DateField, DateInput, ModelChoiceField
 from invoices.models import Invoice
 from utilities.forms import BootstrapMixin
+import customers
+import sales
 
 
 class InvoiceForm(ModelForm, BootstrapMixin):
@@ -14,6 +16,21 @@ class InvoiceForm(ModelForm, BootstrapMixin):
 
 
 class InvoiceFilterForm(ModelForm, BootstrapMixin):
+
+    sale = ModelChoiceField(
+        queryset=sales.models.Sale.objects.all(),
+        required=False)
+
+    customer = ModelChoiceField(
+        queryset=customers.models.Customer.objects.all(),
+        required=False,
+        to_field_name='id',
+        help_text='Invoices for a Customer',
+        error_messages={
+            'invalid_choice': 'Customer not found.',
+        }
+    )
+
     class Meta:
         model = Invoice
-        fields = ['sale']
+        fields = ['sale', 'customer']
