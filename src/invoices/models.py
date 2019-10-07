@@ -14,6 +14,8 @@ class Invoice(DateTimedModel):
         max_digits=10, decimal_places=3)
 
     date_to_pay = models.DateField()
+    date_issue = models.DateField()
+
     notes = models.TextField(blank=True, null=True)
 
     class Meta:
