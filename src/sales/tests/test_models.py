@@ -29,6 +29,6 @@ class SaleModelTestCase(TestCase):
         self.assertEqual(sale.total_invoices, 550)
 
     def test_to_csv(self):
-        """ Should return dict with values for sales"""
-        sale = SaleFactory(total_value=1000)
-        self.assertEqual(sale.to_csv().split(',')[2], '1000')
+        """ Should return value sale in export sales"""
+        sale = SaleFactory(total_value=12347)
+        self.assertIn('12347',  sale.to_csv())
