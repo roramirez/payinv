@@ -5,6 +5,16 @@ Change Log
 This document records all notable changes to `Payinv <https://github.com/roramirez/payinv>`_.
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
+`0.3.0`_ (2019-10-08)
+---------------------
+* Add date_issue for Invoice
+* Add filter for Customer in Payments and Invoices
+* Add link for Payment, Sales and Invoice in Customer
+* Add samples fixtures
+* Heroku integration
+* Fix path url fonts in theme.css
+* Improve Customer queries (@brianl9995)
+
 `0.2.1`_ (2019-10-02)
 ---------------------
 * Bugfix django_tables2 dependency update there not showing data from sales list
