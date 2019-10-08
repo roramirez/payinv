@@ -5,8 +5,7 @@
   "homepage": "https://github.com/roramirez/payinv",
   "dependencies": {
     "bootstrap": "3.3.x",
-    "font-awesome": "4.4.x",
-    "clipboard": "v2.0.x"
+    "font-awesome": "4.4.x"
   },
   "authors": [
     "Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>"
