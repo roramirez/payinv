@@ -8,6 +8,7 @@ import sales
 class InvoiceForm(ModelForm, BootstrapMixin):
 
     date_to_pay = DateField(widget=DateInput(attrs={'type': 'date'}))
+    date_issue = DateField(widget=DateInput(attrs={'type': 'date'}))
 
     class Meta:
         model = Invoice
