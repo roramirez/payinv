@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-10-06 19:39+0000\n"
+"POT-Creation-Date: 2019-10-09 15:53-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,7 +39,7 @@ msgstr "Nombre"
 msgid "Address"
 msgstr "Dirección"
 
-#: customers/tables.py:13 templates/customers/show.html:68
+#: customers/tables.py:13 templates/customers/show.html:80
 msgid "Active"
 msgstr "Activo"
 
@@ -47,7 +47,7 @@ msgstr "Activo"
 msgid "Created At"
 msgstr "Creado"
 
-#: invoices/models.py:20 templates/invoices/add.html:9
+#: invoices/models.py:22 templates/invoices/add.html:9
 #: templates/invoices/show.html:12 templates/sales/add_invoice.html:16
 msgid "Invoice"
 msgstr "Factura"
@@ -72,6 +72,10 @@ msgstr "Valor total"
 #: invoices/tables.py:16
 msgid "Date to Pay"
 msgstr "Fecha a pagar"
+
+#: invoices/tables.py:17
+msgid "Date of Issue"
+msgstr "Fecha de emisión"
 
 #: payments/models.py:19 payments/tables.py:11 templates/payments/add.html:9
 #: templates/payments/show.html:12 templates/sales/add_payment.html:15
@@ -135,13 +139,13 @@ msgstr " Pendiente de Factura"
 msgid " Pending Payment"
 msgstr " Pendiente de Pago"
 
-#: templates/_base.html:46 templates/customers/show.html:92
+#: templates/_base.html:46 templates/customers/show.html:104
 #: templates/home.html:29 templates/invoices/list.html:5
 #: templates/invoices/list.html:15
 msgid "Invoices"
 msgstr "Facturas"
 
-#: templates/_base.html:55 templates/customers/show.html:87
+#: templates/_base.html:55 templates/customers/show.html:99
 #: templates/home.html:21 templates/payments/list.html:5
 #: templates/payments/list.html:15
 msgid "Payments"
@@ -163,15 +167,15 @@ msgstr "ID de empresa"
 msgid "Total sales"
 msgstr "Total ventas"
 
-#: templates/customers/show.html:60
+#: templates/customers/show.html:64
 msgid "Total invoice"
 msgstr "Total Facturas"
 
-#: templates/customers/show.html:64
+#: templates/customers/show.html:72
 msgid "Total payments"
 msgstr "Total Pagos"
 
-#: templates/customers/show.html:82
+#: templates/customers/show.html:94
 msgid "Sales Pendings"
 msgstr "Ventas pendientes de facturas"
 
