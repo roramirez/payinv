@@ -24,4 +24,5 @@ urlpatterns = [
     url(r'^sales/', include('sales.urls')),
     url(r'^invoices/', include('invoices.urls')),
     url(r'^payments/', include('payments.urls')),
+    url(r'^i18n/', include('django.conf.urls.i18n'))
 ]

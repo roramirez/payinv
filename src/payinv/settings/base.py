@@ -13,7 +13,6 @@ BASE_DIR = os.path.abspath(os.path.join(THIS_DIR, os.pardir))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = get_secret('PAYINV_SECRET_KEY')
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -46,6 +45,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -115,8 +115,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
+from django.utils.translation import ugettext_lazy as _
+LANGUAGE_CODE = 'en'
+LANGUAGES = [
+        ('en', _('English')),
+        ('es', _('Spanish')),
+]
 
-LANGUAGE_CODE = 'es_ES'
 
 TIME_ZONE = 'UTC'
 
