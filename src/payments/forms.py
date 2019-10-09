@@ -1,4 +1,4 @@
-from django.forms import ModelForm, DateField, DateInput, ModelChoiceField
+from django.forms import ModelForm, ModelChoiceField, CharField, TextInput
 from payments.models import Payment
 from utilities.forms import BootstrapMixin
 import customers
@@ -7,7 +7,8 @@ import sales
 
 class PaymentForm(ModelForm, BootstrapMixin):
 
-    pay_at = DateField(widget=DateInput(attrs={'type': 'date'}))
+    pay_at = CharField(widget=TextInput(attrs={"class": "datepicker",
+                                               "placeholder": ""}))
 
     class Meta:
         model = Payment
