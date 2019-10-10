@@ -115,3 +115,7 @@ table:not(.table-bordered) > thead > tr > th, .table:not(.table-bordered) > thea
 .alert-notes {
     display: none;
 }
+
+#language{
+    margin-top: 8px;
+}

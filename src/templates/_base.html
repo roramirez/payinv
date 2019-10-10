@@ -11,6 +11,10 @@
 </head>
 
 <body>
+
+{% load i18n %}
+
+
     <div class="wrapper">
         <div class="navbar navbar-static-top navbar-inverse" role="navigation" aria-label="navbar">
             <div class="container">
@@ -57,6 +61,24 @@
                             <li><a href="{% url 'payment_add' %}"><i class="fa fa-plus-circle" aria-hidden="true"></i>{% trans ' New' %}</a></li>
                             <li><a href="{% url 'payment_list' %}"><i class="fa fa-search" aria-hidden="true"></i>{% trans ' List' %}</a></li>
                         </ul>
+                    </li>
+                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <form id="change-language" action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                            <input name="next" type="hidden" value="{{ redirect_to }}" />
+                            <select class="form-control input-sm" id="language" name="language">
+                                {% get_current_language as LANGUAGE_CODE %}
+                                {% get_available_languages as LANGUAGES %}
+                                {% get_language_info_list for LANGUAGES as languages %}
+                                {% for language in languages %}
+                                    <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                        {{ language.name_local }} ({{ language.code }})
+                                    </option>
+                                {% endfor %}
+                            </select>
+                        </form>
                     </li>
                  </ul>
             </div>
