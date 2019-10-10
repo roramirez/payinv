@@ -23,3 +23,29 @@ class SalesViewTestCase(TestCase):
         response = client.get(url)
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, '193456')
+
+    def test_search_not_found(self):
+        """ Should not returns esults """
+        client = Client()
+        SaleFactory(internal_id="ABC-123")
+        SaleFactory(internal_id="ABC")
+        response = client.get('/sales/?q=ABCd:w')
+        self.assertEqual(len(response.context['table'].data), 0)
+
+    def test_search_found(self):
+        """ Should returns two results """
+        client = Client()
+        SaleFactory(internal_id="123")
+        SaleFactory(internal_id="ABC-123")
+        SaleFactory(internal_id="ABC")
+        response = client.get('/sales/?q=ABC')
+        self.assertEqual(len(response.context['table'].data), 2)
+
+    def test_search_found_and_redirect(self):
+        """ Should return one result and redirect """
+        client = Client()
+        SaleFactory(internal_id="123")
+        SaleFactory(internal_id="ABC-123")
+        response = client.get('/sales/?q=ABC-123')
+        self.assertEqual(response.status_code, 302)
+        self.assertIsNone(response.context)
