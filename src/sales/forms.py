@@ -1,11 +1,12 @@
-from django.forms import ModelForm, DateField, DateInput
+from django.forms import ModelForm, CharField, TextInput
 from sales.models import Sale
 from utilities.forms import BootstrapMixin
 
 
 class SaleForm(ModelForm, BootstrapMixin):
 
-    done_at = DateField(widget=DateInput(attrs={'type': 'date'}))
+    done_at = CharField(widget=TextInput(attrs={"class": "datepicker",
+                                                "placeholder": ""}))
 
     class Meta:
         model = Sale

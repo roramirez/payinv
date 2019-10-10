@@ -1,4 +1,4 @@
-from django.forms import ModelForm, DateField, DateInput, ModelChoiceField
+from django.forms import ModelForm, ModelChoiceField, CharField, TextInput
 from invoices.models import Invoice
 from utilities.forms import BootstrapMixin
 import customers
@@ -7,8 +7,10 @@ import sales
 
 class InvoiceForm(ModelForm, BootstrapMixin):
 
-    date_to_pay = DateField(widget=DateInput(attrs={'type': 'date'}))
-    date_issue = DateField(widget=DateInput(attrs={'type': 'date'}))
+    date_to_pay = CharField(widget=TextInput(attrs={"class": "datepicker",
+                                                    "placeholder": ""}))
+    date_issue = CharField(widget=TextInput(attrs={"class": "datepicker",
+                                                   "placeholder": ""}))
 
     class Meta:
         model = Invoice
