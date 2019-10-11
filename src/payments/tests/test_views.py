@@ -1,6 +1,6 @@
 from django.test import TestCase
 from django.test import Client
-from core.tests.factories import SaleFactory
+from core.tests.factories import SaleFactory, PaymentFactory
 from django.urls import reverse_lazy
 
 
@@ -24,3 +24,18 @@ class PaymentViewTestCase(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.context['sale'], sale)
         self.assertEqual(response.context['obj'], None)
+
+    def test_search_found_payments(self):
+        """ Should returns two results """
+        client = Client()
+        PaymentFactory(total_value=1500)
+        PaymentFactory(total_value=1501)
+        response = client.get('/payments/?q=150')
+        self.assertEqual(len(response.context['table'].data), 2)
+
+    def test_search_not_found_payments(self):
+        """ Should not returns results """
+        client = Client()
+        PaymentFactory(total_value=1501)
+        response = client.get('/payments/?q=ABC')
+        self.assertEqual(len(response.context['table'].data), 0)
