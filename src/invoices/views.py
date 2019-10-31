@@ -49,7 +49,7 @@ class InvoiceAddToSale(ObjectEditView):
 
 
 class InvoiceListView(ObjectListView):
-    queryset = Invoice.objects.order_by('-id')
+    queryset = Invoice.objects.select_related('sale').order_by('-id')
     table = tables.InvoiceTable
     template_name = 'invoices/list.html'
     filter = filters.InvoiceFilter

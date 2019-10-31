@@ -50,7 +50,7 @@ class PaymentAddToSale(ObjectEditView):
 
 
 class PaymentListView(ObjectListView):
-    queryset = Payment.objects.order_by('-id')
+    queryset = Payment.objects.select_related('sale').order_by('-id')
     table = tables.PaymentTable
     template_name = 'payments/list.html'
     filter = filters.PaymentFilter
