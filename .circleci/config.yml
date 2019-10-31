@@ -63,7 +63,7 @@ jobs:
           command: |
             . venv/bin/activate
             cd src
-            python manage.py test --noinput
+            python -Wall manage.py test -v 2 --noinput
 
       - run:
           name: run coverage
