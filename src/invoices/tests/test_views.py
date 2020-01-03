@@ -39,3 +39,32 @@ class InvoiceViewTestCase(TestCase):
         InvoiceFactory(internal_id=1501)
         response = client.get('/invoices/?q=ABC')
         self.assertEqual(len(response.context['table'].data), 0)
+
+    def test_not_found_invoice_edit(self):
+        """
+        Should return a 404 not found for not PK for Invoice
+        """
+        client = Client()
+        url = reverse_lazy('invoice_edit', kwargs={'pk': 9669})
+        response = client.get(url)
+        self.assertEqual(response.status_code, 404)
+
+    def test_not_found_invoice(self):
+        """
+        Should return a 404 not found for not PK for Invoice EDIT
+        """
+        client = Client()
+        url = reverse_lazy('invoice', kwargs={'pk': 9669})
+        response = client.get(url)
+        self.assertEqual(response.status_code, 404)
+
+    def test_not_found_invoice_200(self):
+        """
+        Should return a 200  found PK
+        """
+
+        invoice = InvoiceFactory(total_value=1500)
+        client = Client()
+        url = reverse_lazy('invoice', kwargs={'pk': invoice.id})
+        response = client.get(url)
+        self.assertEqual(response.status_code, 200)
