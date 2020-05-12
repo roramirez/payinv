@@ -5,6 +5,12 @@ Change Log
 This document records all notable changes to `Payinv <https://github.com/roramirez/payinv>`_.
 This project adheres to `Semantic Versioning <https://semver.org/>`_.
 
+`0.4.0`_ (2020-05-11)
+---------------------
+* Add date selector for Invoice dates
+* Add selector language
+* Add more tests
+
 `0.3.0`_ (2019-10-08)
 ---------------------
 * Add date_issue for Invoice
