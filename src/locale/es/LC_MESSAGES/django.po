@@ -1,6 +1,6 @@
-# Copyright (C) 2019
+# Copyright (C) 2019-2020
 # This file is distributed under the same license as the payinv package.
-# Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>, 2019.
+# Rodrigo Ramírez Norambuena <a@rodrigoramirez.com>, 2019-2020.
 #
 #, fuzzy
 msgid ""
