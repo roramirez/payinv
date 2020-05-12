@@ -1,5 +1,5 @@
 # Django and other stuff
-Django==1.11.24
+Django==1.11.28
 django_registration==2.1.2
 Markdown==2.6.6
 django-filter==1.1
