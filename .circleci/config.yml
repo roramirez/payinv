@@ -45,9 +45,9 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-            - v1-dependencies-{{ checksum "requirements.txt" }}
+            - v1-$CIRCLE_JOB-dependencies-{{ checksum "requirements/test.txt" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - v1-$CIRCLE_JOB-dependencies-
 
       - run:
           name: install dependencies
@@ -59,7 +59,7 @@ jobs:
       - save_cache:
           paths:
             - ./venv
-          key: v1-dependencies-{{ checksum "requirements/test.txt" }}
+          key: v1-$CIRCLE_JOB-dependencies-{{ checksum "requirements/test.txt" }}
 
       - run:
           name: run lint
@@ -109,6 +109,3 @@ jobs:
           POSTGRES_USER: payinv
           POSTGRES_DB: payinv_test
           POSTGRES_PASSWORD: "test_password"
-
-
- 
