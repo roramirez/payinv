@@ -5,6 +5,7 @@ from django.utils.translation import ugettext as _
 from django.db.models import Sum
 import invoices
 import payments
+from django.urls import reverse
 
 
 class Customer(DateTimedModel):
@@ -29,6 +30,9 @@ class Customer(DateTimedModel):
             self.cid,
             self.address,
         ])
+
+    def get_absolute_url(self):
+        return reverse('customer', args=[self.pk])
 
     @property
     def total_sales(self):

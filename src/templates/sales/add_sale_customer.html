@@ -1,0 +1,41 @@
+{% extends 'utilities/obj_edit.html' %}
+
+{% load form_helpers %}
+{% load i18n %}
+
+
+{% block form %}
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <strong>{% trans 'Customer' %}</strong>
+        </div>
+            <table class="table table-hover panel-body">
+
+                <tr>
+                    <td>{% trans 'Name' %}</td>
+                    <td>{{ customer.name }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'CID' %}</td>
+                    <td>{{ customer.cid }}</td>
+                </tr>
+                <tr>
+                    <td>{% trans 'Address' %}</td>
+                    <td>{{ customer.address }}</td>
+                </tr>
+            </table>
+ 
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading"><strong>{% trans 'Add new Sale' %}</strong></div>
+        <div class="panel-body">
+            {% render_field form.internal_id %}
+            {% render_field form.customer.as_hidden %}
+            {% render_field form.total_value %}
+            {% render_field form.done_at %}
+            {% render_field form.concept %}
+            {% render_field form.notes %}
+        </div>
+    </div>
+{% endblock %}

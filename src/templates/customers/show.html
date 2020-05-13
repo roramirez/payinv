@@ -31,6 +31,10 @@
             <span class="fa fa-pencil" aria-hidden="true"></span>
             {% trans 'Edit this customer' %}
         </a>
+        <a href="{% url 'sale_to_customer' customer_id=customer.pk %}" class="btn btn-success">
+            <span class="fa fa-shopping-cart" aria-hidden="true"></span>
+            {% trans 'Add sale to this customer' %}
+        </a>
 </div>
 
 <div class="row">
