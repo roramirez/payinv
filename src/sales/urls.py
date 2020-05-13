@@ -11,7 +11,8 @@ urlpatterns = [
     url(r'^pending/payment/$', views.SaleListPendingPayment.as_view(),
         name='sale_list_pending_payment'),
 
-    url(r'^new/customer/(?P<customer_id>[\w-]+)/$', views.SaleAddToCustomer.as_view(),
+    url(r'^new/customer/(?P<customer_id>[\w-]+)/$',
+        views.SaleAddToCustomer.as_view(),
         name='sale_to_customer'),
     url(r'^(?P<pk>[\w-]+)/$', views.sale, name='sale'),
     url(r'^(?P<pk>[\w-]+)/edit/$',

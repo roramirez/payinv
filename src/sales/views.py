@@ -53,7 +53,8 @@ class SaleAddToCustomer(ObjectEditView):
     model = Sale
 
     def get(self, request, *args, **kwargs):
-        customer = get_object_or_404(customers.models.Customer, pk=kwargs['customer_id'])
+        customer = get_object_or_404(customers.models.Customer,
+                                     pk=kwargs['customer_id'])
         obj = None
         self.success_url = "/customers/{}/".format(customer.id)
 
