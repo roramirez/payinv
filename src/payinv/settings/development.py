@@ -17,6 +17,11 @@ LOGGING = {
         'django.db.backends': {
             'level': 'DEBUG',
         },
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
+            'propagate': False,
+        },
     },
     'root': {
         'handlers': ['console'],
