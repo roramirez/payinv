@@ -6,7 +6,11 @@
     </tr>
     <tr>
         <td>{% trans 'Customer' %}</td>
-        <td>{{ sale.customer }}</td>
+        <td>
+            <a href="{% url 'customer' pk=sale.customer.pk %}">
+                {{ sale.customer }}
+            </a>
+        </td>
     </tr>
     <tr>
         <td>{% trans 'Customer ID' %}</td>
