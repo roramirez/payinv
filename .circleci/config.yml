@@ -14,11 +14,11 @@ workflows:
 
 
 jobs:
-  py3.6: &test-template
+  py3.5: &test-template
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6-browsers`
-      - image: circleci/python:3.6
+      - image: circleci/python:3.5
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -87,10 +87,10 @@ jobs:
       - store_artifacts:
           path: src/htmlcov
 
-  py3.5:
+  py3.6:
     <<: *test-template
     docker:
-      - image: circleci/python:3.5
+      - image: circleci/python:3.6
 
       - image: circleci/postgres:9.4
         environment: # environment variables for database
