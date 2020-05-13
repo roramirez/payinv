@@ -8,14 +8,17 @@ workflows:
   version: 2
   test:
     jobs:
+      - py3.7
       - py3.6
+      - py3.5
+
 
 jobs:
   py3.6: &test-template
     docker:
       # specify the version you desire here
-      # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.6.1
+      # use `-browsers` prefix for selenium tests, e.g. `3.6-browsers`
+      - image: circleci/python:3.6
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -83,3 +86,14 @@ jobs:
 
       - store_artifacts:
           path: src/htmlcov
+
+  py3.5:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.5
+
+  py3.7:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.7
+
