@@ -2,9 +2,16 @@
 #
 # Check https://circleci.com/docs/2.0/language-python/ for more details
 #
-version: 2
+version: 2.0
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - py3.6
+
 jobs:
-  build:
+  py3.6: &test-template
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
