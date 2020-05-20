@@ -1,7 +1,7 @@
 Payinv
 ======
 
-You can see it in action in `Demo <https://payinv.herokuapp.com/>`
+You can see it in action in `Demo <https://payinv.herokuapp.com/>`_
 
 Payinv is a control system for Sales <-> Invoices And Payments for Customer.
 
