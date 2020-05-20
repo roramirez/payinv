@@ -1,5 +1,8 @@
 Payinv
 ======
+
+You can see it in action in `Demo <https://payinv.herokuapp.com/>`
+
 Payinv is a control system for Sales <-> Invoices And Payments for Customer.
 
 
@@ -47,6 +50,3 @@ First to all you be sure in your system has installed Python 3, PostgreSQL and N
 #. Run init script::
 
    ./run-payinv.sh
-
-
-
